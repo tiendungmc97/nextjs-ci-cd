@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rules
 
-## Getting Started
+Before submitting code, the following checks will be automatically performed:
 
-First, run the development server:
+- Commit message format (rule in `commitlint.config.cjs` will be apply)
+- Tests (`npm run test`)
+- Linting (`npm run lint`)
+- Code formatting (`npm run format`)
+  If there are any errors, please fix them before submitting your code.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Coding Rules
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Functions in the `util` folder must have tests (`npm run test` to check).
+- Commit messages must follow the rules in `commitlint.config.cjs`.
+- To fix linting errors, run `npm run lint:fix`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# CI/CD Process for Next.js Project in github.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## CI:
 
-## Learn More
+- Run tests
+- Run linting: check lint with best practices for Next.js, format code with Prettier
+- Run build
 
-To learn more about Next.js, take a look at the following resources:
+## CD:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Build
+- Deploy
