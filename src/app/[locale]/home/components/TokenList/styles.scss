@@ -1,0 +1,33 @@
+$n: 10; /* number of images*/
+$w: 250px; /* width */
+$g: 0.1; /* gap as percentage of width */
+.token-cards {
+  --d: 30s; /* duration */
+  display: grid;
+  grid-template-columns: repeat(3, $w); /* number of visible images */
+  gap: $g * $w;
+  overflow: hidden;
+}
+.token-cards > div {
+  grid-area: 1/1;
+  width: 100%;
+  object-fit: cover;
+  animation: move var(--d) linear infinite reverse;
+}
+.token-cards > .animation-paused {
+  animation-play-state: paused;
+}
+
+@for $i from 2 to ($n + 1) {
+  .token-cards > div:nth-child(#{$i}) {
+    animation-delay: calc(#{(1 - $i) / $n}* var(--d));
+  }
+}
+@keyframes move {
+  #{100 / ($n + ($n - 2) * $g)}% {
+    transform: translate(-100%);
+  }
+  #{100/($n + ($n - 2)*$g) + .01}% {
+    transform: translate(($n - 1 + ($n - 2) * $g) * 100%);
+  }
+}

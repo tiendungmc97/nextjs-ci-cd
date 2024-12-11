@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
-import "./styles.css";
-
+import "./styles.scss";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 type Props = {
   children: ReactNode;
 };
