@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import "./styles.scss";
+import "animate.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

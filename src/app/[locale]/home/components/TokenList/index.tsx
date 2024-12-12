@@ -1,15 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles.scss";
-function TokenList() {
+function TokenCardList() {
   const items = Array.from({ length: 10 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  useEffect(() => {
-    if (hoveredIndex === null) return;
-    console.log(123123);
-  }, [hoveredIndex]);
   return (
-    <div className="h-screen w-full bg-gray-500">
+    <div className="h-40 w-full bg-gray-500">
       <div className="token-cards mx-2 p-8">
         {items.map((_, i) => (
           <div
@@ -26,4 +22,4 @@ function TokenList() {
   );
 }
 
-export default TokenList;
+export default TokenCardList;
