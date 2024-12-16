@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "./Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,11 @@ export default async function BaseLayout({ children, locale }: Props) {
 
   return (
     <html className="h-full" lang={locale}>
-      <body className={clsx(inter.className, "flex h-full flex-col")}>
+      <body className={clsx(inter.className, "h-full")}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
